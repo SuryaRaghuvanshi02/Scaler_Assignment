@@ -19,7 +19,7 @@ const connectDB = async () => {
         throw error;
       }
 };
-connectDB();
+
 
 
 
@@ -50,5 +50,6 @@ app.use((err,req,res,next)=>{
 
 
 app.listen(8800,()=>{
-    console.log("Connected to backend.")
+  connectDB();
+  console.log("Connected to backend.")
 })
