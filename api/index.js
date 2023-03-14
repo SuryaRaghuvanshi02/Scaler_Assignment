@@ -4,7 +4,6 @@ import mongoose from "mongoose"
 import cors from "cors"
 
 import authRoute from "./roots/auth.js"
-import usersRoute from "./roots/users.js"
 import roomsRoute from "./roots/rooms.js"
 
 
@@ -23,6 +22,7 @@ const connectDB = async () => {
 
 
 
+
 mongoose.connection.on("disconnected", ()=>{
     console.log("mongoDB disconnected!")
 })
@@ -33,7 +33,6 @@ mongoose.connection.on("disconnected", ()=>{
 app.use(express.json())
 app.use(cors())
 app.use("/api/auth",authRoute);
-app.use("/api/users",usersRoute);
 app.use("/api/rooms",roomsRoute);
 
 app.use((err,req,res,next)=>{
