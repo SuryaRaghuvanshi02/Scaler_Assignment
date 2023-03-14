@@ -2,8 +2,6 @@ import express, { response } from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cors from "cors"
-
-import authRoute from "./roots/auth.js"
 import roomsRoute from "./roots/rooms.js"
 
 
